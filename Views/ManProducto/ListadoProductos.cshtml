@@ -1,0 +1,69 @@
+﻿@model IEnumerable<yummyApp.Models.Producto>
+
+@{
+    ViewData["Title"] = "ListadoProductos";
+}
+
+<h1>ListadoProductos</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id_producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_cat_or)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_cat_com)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@* @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_cat_or)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_cat_com)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+<div>
+    <a asp-controller="Home" asp-action="ManGeneral">Volver</a>
+</div>
