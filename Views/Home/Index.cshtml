@@ -3,6 +3,19 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Iniciar sesión</h1>
+
+    <div>
+        <form>
+            <label>Cuenta de usuario</label><br />
+            <input type="text" placeholder="ejemplo@dominio.com" /><br /><br />
+            <label>Contraseña</label><br />
+            <input type="text" placeholder="password" /><br /><br />
+            @* <button action="submit">Ingresar</button> *@
+            <a asp-action="ManGeneral">Ingresar a mantenimiento</a>
+            <br />
+            <a asp-action="TiendaGeneral">Ingresar a tienda</a>
+        </form>
+    </div>
+    
 </div>

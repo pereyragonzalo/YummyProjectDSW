@@ -28,3 +28,34 @@ F:\Cibertec\5 Ciclo\Modulo2\DesarrolloServiciosWebI\yummyApp\obj\Debug\net8.0\re
 F:\Cibertec\5 Ciclo\Modulo2\DesarrolloServiciosWebI\yummyApp\obj\Debug\net8.0\yummyApp.pdb
 F:\Cibertec\5 Ciclo\Modulo2\DesarrolloServiciosWebI\yummyApp\obj\Debug\net8.0\yummyApp.genruntimeconfig.cache
 F:\Cibertec\5 Ciclo\Modulo2\DesarrolloServiciosWebI\yummyApp\obj\Debug\net8.0\ref\yummyApp.dll
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\appsettings.Development.json
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\appsettings.json
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\yummyApp.staticwebassets.runtime.json
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\yummyApp.exe
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\yummyApp.deps.json
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\yummyApp.runtimeconfig.json
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\yummyApp.dll
+C:\workspaceNetCore\YummyProjectDSW\bin\Debug\net8.0\yummyApp.pdb
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.AssemblyInfoInputs.cache
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.AssemblyInfo.cs
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.csproj.CoreCompileInputs.cache
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.MvcApplicationPartsAssemblyInfo.cache
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.RazorAssemblyInfo.cache
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.RazorAssemblyInfo.cs
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.sourcelink.json
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\staticwebassets.build.json
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\staticwebassets.development.json
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\staticwebassets\msbuild.yummyApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\staticwebassets\msbuild.build.yummyApp.props
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.yummyApp.props
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.yummyApp.props
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\staticwebassets.pack.json
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\scopedcss\bundle\yummyApp.styles.css
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\scopedcss\projectbundle\yummyApp.bundle.scp.css
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.dll
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\refint\yummyApp.dll
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.pdb
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\yummyApp.genruntimeconfig.cache
+C:\workspaceNetCore\YummyProjectDSW\obj\Debug\net8.0\ref\yummyApp.dll

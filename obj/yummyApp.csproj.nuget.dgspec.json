@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\yummyApp\\yummyApp.csproj": {}
+    "C:\\workspaceNetCore\\YummyProjectDSW\\yummyApp.csproj": {}
   },
   "projects": {
-    "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\yummyApp\\yummyApp.csproj": {
+    "C:\\workspaceNetCore\\YummyProjectDSW\\yummyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\yummyApp\\yummyApp.csproj",
+        "projectUniqueName": "C:\\workspaceNetCore\\YummyProjectDSW\\yummyApp.csproj",
         "projectName": "yummyApp",
-        "projectPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\yummyApp\\yummyApp.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\yummyApp\\obj\\",
+        "projectPath": "C:\\workspaceNetCore\\YummyProjectDSW\\yummyApp.csproj",
+        "packagesPath": "C:\\Users\\aleja\\.nuget\\packages\\",
+        "outputPath": "C:\\workspaceNetCore\\YummyProjectDSW\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aleja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
