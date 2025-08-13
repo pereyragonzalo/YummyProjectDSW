@@ -1,15 +1,35 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Registra los servicios de MVC y Razor Pages
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages(options =>
+{
+    // Define la ruta por defecto para que sea el login de Identity
+    options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "");
+});
+
+
+// Obtén la cadena de conexión
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+// Configura Entity Framework Core
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// Configura ASP.NET Core Identity
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// =====================================================================
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -18,8 +38,14 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// El orden es crucial para que la autenticación funcione
+app.UseAuthentication();
 app.UseAuthorization();
 
+// Mapea las páginas de Razor de Identity
+app.MapRazorPages();
+
+// Mapea las rutas de MVC (controladores)
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
