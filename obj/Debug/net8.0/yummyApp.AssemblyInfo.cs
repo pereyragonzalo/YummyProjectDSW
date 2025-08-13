@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("yummyApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5f1cb6f9154e6ded65a935ac77f1bcfbf008a43")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3eac19a4647017225dd152a9c3e25614f764f3f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("yummyApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("yummyApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

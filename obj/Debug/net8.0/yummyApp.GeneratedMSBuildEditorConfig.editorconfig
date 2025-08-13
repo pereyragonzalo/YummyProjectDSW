@@ -42,6 +42,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaWVuZGFHZW5lcmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/ListadoProductos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cTGlzdGFkb1Byb2R1Y3Rvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
