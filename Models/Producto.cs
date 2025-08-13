@@ -4,7 +4,7 @@ namespace yummyApp.Models
 {
     public class Producto
     {
-        [Display(Name = "Id Producto")] public int id_producto { get; set; }
+        [Display(Name = "Id Producto"), Key] public int id_producto { get; set; }
 
         [Required, Display(Name = "Nombre")] public string? nombre { get; set; }
 
