@@ -23,6 +23,11 @@ namespace yummyApp.Controllers
             return View();
         }
 
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
 
         //private readonly ILogger<HomeController> _logger;
 
