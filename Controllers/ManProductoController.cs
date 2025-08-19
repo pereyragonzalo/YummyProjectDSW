@@ -4,6 +4,7 @@ using System.Data;
 using yummyApp.Models;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace yummyApp.Controllers
 {
@@ -45,6 +46,35 @@ namespace yummyApp.Controllers
             return temporal;
         }
 
+
+        public async Task<IActionResult> ListadoGeneralProductos(string? ori=null, string? come=null, int numreg=10, int page=0)
+        {
+            var temporal = listGeneralProductos();
+
+            // Filtrado
+            if (!string.IsNullOrEmpty(ori))
+                temporal = temporal.Where(p => p.cat_or == ori).ToList();
+
+            if (!string.IsNullOrEmpty(come))
+                temporal = temporal.Where(p => p.cat_com == come).ToList();
+
+            //  Paginación
+            int total = temporal.Count();
+            int pags = total % numreg == 0 ? total / numreg : total / numreg + 1;
+
+            ViewBag.page = page;
+            ViewBag.pags = pags;
+            ViewBag.ori = ori;
+            ViewBag.come = come;
+            ViewBag.numreg = numreg;
+
+            ViewBag.catcomidas = listCatComidas().ToList();
+            ViewBag.catorigenes = listCatOrigenes().ToList();
+            var resultado = temporal.Skip(page * numreg).Take(numreg);
+
+            return View(await Task.Run(() => resultado));
+        }
+
         IEnumerable<Producto> listProductos()
         {
             List<Producto> temporal = new List<Producto>();
@@ -73,10 +103,7 @@ namespace yummyApp.Controllers
             return temporal;
         }
 
-        public async Task<IActionResult> ListadoGeneralProductos()
-        {
-            return View(await Task.Run(() => listGeneralProductos()));
-        }
+        
 
         IEnumerable<CategoriaComida> listCatComidas()
         {
