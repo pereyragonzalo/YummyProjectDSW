@@ -16,6 +16,34 @@ namespace yummyApp.Controllers
             _config = config;
         }
 
+        IEnumerable<ProductoModel> listGeneralProductos()
+        {
+            List<ProductoModel> temporal = new List<ProductoModel>();
+            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("exec usp_productoModel", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    temporal.Add(new ProductoModel()
+                    {
+                        id_producto = dr.GetInt32(0),
+                        nombre = dr.GetString(1),
+                        precio = dr.GetDecimal(2),
+                        stock = dr.GetInt32(3),
+                        cat_or = dr.GetString(4),
+                        cat_com = dr.GetString(5),
+
+                    });
+                }
+                dr.Close();
+            }
+
+            return temporal;
+        }
+
         IEnumerable<Producto> listProductos()
         {
             List<Producto> temporal = new List<Producto>();
@@ -44,9 +72,9 @@ namespace yummyApp.Controllers
             return temporal;
         }
 
-        public async Task<IActionResult> ListadoProductos()
+        public async Task<IActionResult> ListadoGeneralProductos()
         {
-            return View(await Task.Run(() => listProductos()));
+            return View(await Task.Run(() => listGeneralProductos()));
         }
 
         //IEnumerable<Producto> paises()
@@ -180,12 +208,12 @@ namespace yummyApp.Controllers
             {
                 SqlCommand cmd = new SqlCommand("usp_desactivar_producto", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_producto", id);
+                cmd.Parameters.AddWithValue("@idProducto", id);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            return RedirectToAction("ListadoProductos");
+            return RedirectToAction("ListadoGeneralProductos");
         }
 
 

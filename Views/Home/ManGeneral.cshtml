@@ -1,27 +1,38 @@
-﻿
-@{
-    ViewData["Title"] = "ManGeneral";
+﻿@{
+    ViewData["Title"] = "Mantenimiento General";
 }
 
-<h1>Mantenimiento general de la aplicación</h1>
-<br />
-<p>Sea bienvenido (a), seleccione el tipo de información que desea editar.</p>
-<br />
-<a asp-action="">Mantenimiento de usuario</a>
-<br />
-<br />
-<a asp-controller="ManProducto" asp-action="ListadoProductos">Mantenimiento de producto</a>
-<br />
-<br />
-<a asp-action="">Mantenimiento de ventas</a>
-<br />
-<br />
-<a asp-action="">Mantenimiento de los detalles de las ventas</a>
-<br />
-<br />
-<a asp-action="">Mantenimiento de la categoría Origen</a>
-<br />
-<br />
-<a asp-action="">Mantenimiento de la categoría Comida</a>
-<br />
-<br />
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0">⚙️ Mantenimiento general de la aplicación</h4>
+        </div>
+        <div class="card-body">
+            <p class="lead">Sea bienvenido(a), seleccione el tipo de información que desea editar:</p>
+
+            <div class="list-group">
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    👤 Mantenimiento de usuario
+                </a>
+                <a asp-controller="ManProducto" asp-action="ListadoGeneralProductos" class="list-group-item list-group-item-action">
+                    📦 Mantenimiento de producto
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    🧾 Mantenimiento de ventas
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    📋 Mantenimiento de los detalles de las ventas
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    🌍 Mantenimiento de la categoría Origen
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    🍽️ Mantenimiento de la categoría Comida
+                </a>
+            </div>
+        </div>
+        <div class="card-footer text-muted text-end">
+            <small>Panel administrativo • Última actualización: @DateTime.Now.ToString("dd/MM/yyyy")</small>
+        </div>
+    </div>
+</div>
