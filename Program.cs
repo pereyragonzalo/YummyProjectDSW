@@ -5,11 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Registra los servicios de MVC y Razor Pages
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages(options =>
-{
-    // Define la ruta por defecto para que sea el login de Identity
-    options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "");
-});
+builder.Services.AddRazorPages();
 
 
 // Obtén la cadena de conexión
