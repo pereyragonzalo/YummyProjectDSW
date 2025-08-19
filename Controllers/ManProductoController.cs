@@ -8,7 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 using yummyApp.Models;
 using System.Data;
 using Microsoft.Data.SqlClient;
+
 using Microsoft.AspNetCore.Mvc.Rendering;
+
+using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace yummyApp.Controllers
 {
@@ -20,6 +25,63 @@ namespace yummyApp.Controllers
         public ManProductoController(IConfiguration config)
         {
             _config = config;
+        }
+
+        IEnumerable<ProductoModel> listGeneralProductos()
+        {
+            List<ProductoModel> temporal = new List<ProductoModel>();
+            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("exec usp_productoModel", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    temporal.Add(new ProductoModel()
+                    {
+                        id_producto = dr.GetInt32(0),
+                        nombre = dr.GetString(1),
+                        precio = dr.GetDecimal(2),
+                        stock = dr.GetInt32(3),
+                        cat_or = dr.GetString(4),
+                        cat_com = dr.GetString(5),
+
+                    });
+                }
+                dr.Close();
+            }
+
+            return temporal;
+        }
+
+
+        public async Task<IActionResult> ListadoGeneralProductos(string? ori=null, string? come=null, int numreg=10, int page=0)
+        {
+            var temporal = listGeneralProductos();
+
+            // Filtrado
+            if (!string.IsNullOrEmpty(ori))
+                temporal = temporal.Where(p => p.cat_or == ori).ToList();
+
+            if (!string.IsNullOrEmpty(come))
+                temporal = temporal.Where(p => p.cat_com == come).ToList();
+
+            //  Paginación
+            int total = temporal.Count();
+            int pags = total % numreg == 0 ? total / numreg : total / numreg + 1;
+
+            ViewBag.page = page;
+            ViewBag.pags = pags;
+            ViewBag.ori = ori;
+            ViewBag.come = come;
+            ViewBag.numreg = numreg;
+
+            ViewBag.catcomidas = listCatComidas().ToList();
+            ViewBag.catorigenes = listCatOrigenes().ToList();
+            var resultado = temporal.Skip(page * numreg).Take(numreg);
+
+            return View(await Task.Run(() => resultado));
         }
 
         IEnumerable<Producto> listProductos()
@@ -50,37 +112,49 @@ namespace yummyApp.Controllers
             return temporal;
         }
 
-        public async Task<IActionResult> ListadoProductos()
+        
+
+        IEnumerable<CategoriaComida> listCatComidas()
         {
-            return View(await Task.Run(() => listProductos()));
+            List<CategoriaComida> temporal = new List<CategoriaComida>();
+            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("exec usp_catcomida", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    temporal.Add(new CategoriaComida()
+                    {
+                        idCategoriaComida = dr.GetInt32(0),
+                        nombreCategoriaComida = dr.GetString(1),
+                    });
+                }
+                dr.Close();
+            }
+            return temporal;
         }
 
-        //IEnumerable<Producto> paises()
-        //{
-        //    List<Producto> temporal = new List<Producto>();
-        //    using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:sql"]))
-        //    {
-        //        cn.Open();
-        //        SqlCommand cmd = new SqlCommand("exec usp_paises", cn);
-        //        SqlDataReader dr = cmd.ExecuteReader();
-        //        while (dr.Read())
-        //        {
-
-        //            temporal.Add(new Producto()
-        //            {
-        //                idpais = dr.GetString(0),
-        //                nombrepais = dr.GetString(1),
-
-
-        //            });
-        //        }
-        //        dr.Close();
-        //    }
-
-        //    return temporal;
-        //}
-
-
+        IEnumerable<CategoriaOrigen> listCatOrigenes()
+        {
+            List<CategoriaOrigen> temporal = new List<CategoriaOrigen>();
+            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("exec usp_catorigen", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    temporal.Add(new CategoriaOrigen()
+                    {
+                        idCategoriaOrigen = dr.GetInt32(0),
+                        nombreCategoriaOrigen = dr.GetString(1),
+                    });
+                }
+                dr.Close();
+            }
+            return temporal;
+        }
 
         Producto Buscar(int id)
         {
@@ -121,9 +195,11 @@ namespace yummyApp.Controllers
 
         public async Task<ActionResult> Create()
         {
-            //ViewBag.paises = new SelectList(paises(), "idpais", "nombrepais");
+            var catcomidas = new SelectList(listCatComidas(), "idCategoriaComida", "nombreCategoriaComida");
+            ViewBag.catorigenes = new SelectList(listCatOrigenes(), "idCategoriaOrigen", "nombreCategoriaOrigen");
+            ViewBag.catcomidas = catcomidas; 
             return View(await Task.Run(() => new Producto()));
-            return View();
+           
         }
 
         [HttpPost]
@@ -131,14 +207,17 @@ namespace yummyApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-            //    ViewBag.paises = new SelectList(paises(), "idpais", "nombrepais", reg.idpais);
+                ViewBag.catcomidas = new SelectList(listCatComidas(), "idCategoriaComida", "nombreCategoriaComida", reg.id_cat_com);
+                ViewBag.catorigenes = new SelectList(listCatOrigenes(), "idCategoriaOrigen", "nombreCategoriaOrigen", reg.id_cat_or);
+                
                 return View(await Task.Run(() => reg));
 
             }
 
             reg.id_producto = 0;
             ViewBag.mensaje = mergeProducto(reg);
-            //ViewBag.paises = new SelectList(paises(), "idpais", "nombrepais", reg.idpais);
+            ViewBag.catcomidas = new SelectList(listCatComidas(), "idCategoriaComida", "nombreCategoriaComida", reg.id_cat_com);
+            ViewBag.catorigenes = new SelectList(listCatOrigenes(), "idCategoriaOrigen", "nombreCategoriaOrigen", reg.id_cat_or);
             return View(await Task.Run(() => reg));
             //return View();
         }
@@ -149,7 +228,8 @@ namespace yummyApp.Controllers
                 return RedirectToAction("Index");
 
             Producto reg = Buscar(id.Value);
-            //ViewBag.paises = new SelectList(paises(), "idpais", "nombrepais", reg.idpais);
+            ViewBag.catcomidas = new SelectList(listCatComidas(), "idCategoriaComida", "nombreCategoriaComida", reg.id_cat_com);
+            ViewBag.catorigenes = new SelectList(listCatOrigenes(), "idCategoriaOrigen", "nombreCategoriaOrigen", reg.id_cat_or);
             return View(await Task.Run(() => reg));
             
         }
@@ -159,11 +239,16 @@ namespace yummyApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-            //    ViewBag.paises = new SelectList(paises(), "idpais", "nombrepais", reg.idpais);
+                ViewBag.catcomidas = new SelectList(listCatComidas(), "idCategoriaComida", "nombreCategoriaComida", reg.id_cat_com);
+                ViewBag.catorigenes = new SelectList(listCatOrigenes(), "idCategoriaOrigen", "nombreCategoriaOrigen", reg.id_cat_or);
+
                 return View(await Task.Run(() => reg));
             }
             ViewBag.mensaje = mergeProducto(reg);
-            //ViewBag.paises = new SelectList(paises(), "idpais", "nombrepais", reg.idpais);
+
+            ViewBag.catcomidas = new SelectList(listCatComidas(), "idCategoriaComida", "nombreCategoriaComida", reg.id_cat_com);
+            ViewBag.catorigenes = new SelectList(listCatOrigenes(), "idCategoriaOrigen", "nombreCategoriaOrigen", reg.id_cat_or);
+
             return View(await Task.Run(() => reg));
             //return View();
         }
@@ -175,7 +260,10 @@ namespace yummyApp.Controllers
                 return RedirectToAction("Index");
 
             Producto reg = Buscar(id.Value);
-            //ViewBag.paises = new SelectList(paises(), "idpais", "nombrepais", reg.idpais);
+
+            ViewBag.catcomidas = new SelectList(listCatComidas(), "idCategoriaComida", "nombreCategoriaComida", reg.id_cat_com);
+            ViewBag.catorigenes = new SelectList(listCatOrigenes(), "idCategoriaOrigen", "nombreCategoriaOrigen", reg.id_cat_or);
+
             return View(await Task.Run(() => reg));
             
         }
@@ -186,12 +274,12 @@ namespace yummyApp.Controllers
             {
                 SqlCommand cmd = new SqlCommand("usp_desactivar_producto", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_producto", id);
+                cmd.Parameters.AddWithValue("@idProducto", id);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
-            return RedirectToAction("ListadoProductos");
+            return RedirectToAction("ListadoGeneralProductos");
         }
 
 

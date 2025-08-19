@@ -85,23 +85,77 @@ ALTER TABLE DetalleVenta
 ADD CONSTRAINT DF_DetalleVenta_Estado DEFAULT 1 FOR estado;
 go
 
----------------------------------------------------PROC ALEJANDRO-------------------------------------------------------------------------------
+-- Insertar datos
+
+-- Insertar datos en CategoriaOrigen
+INSERT INTO CategoriaOrigen (nombreCategoriaOrigen) VALUES 
+('Italiana'),
+('Mexicana'),
+('Japonesa')
+go
+
+-- Insertar datos en CategoriaComida
+INSERT INTO CategoriaComida (nombreCategoriaComida) VALUES 
+('Postres'),
+('Platos Principales'),
+('Bebidas')
+go
+
+INSERT INTO Producto (nombreProducto, precioProd, stockProd, idCategoriaOrigen, idCategoriaComida)
+VALUES 
+('Tiramisú', 18.50, 20, 1, 1),
+('Tacos al Pastor', 12.00, 50, 2, 2),
+('Sushi Roll', 22.00, 30, 3, 2),
+('Agua Mineral', 5.00, 100, 3, 3),
+('Pizza Margarita', 25.00, 15, 1, 2)
+go
+
+INSERT INTO Venta (idUsuario) VALUES 
+('user1'),
+('user2'),
+('user3'),
+('user4'),
+('user5')
+go
+
+INSERT INTO DetalleVenta (idVenta, idProducto, cantidad, precioProd)
+VALUES 
+(1, 1, 2, 18.50),
+(2, 2, 3, 12.00),
+(3, 3, 1, 22.00),
+(4, 4, 5, 5.00),
+(5, 5, 2, 25.00)
+go
+
+-- Procedimientos almacenado
+
+CREATE or alter PROCEDURE usp_productoModel
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        p.idProducto,
+        p.nombreProducto,
+        p.precioProd,
+        p.stockProd,
+        co.nombreCategoriaOrigen AS nombreOrigen,
+        cc.nombreCategoriaComida AS nombreComida,
+        p.estado
+    FROM Producto p
+    INNER JOIN CategoriaOrigen co ON p.idCategoriaOrigen = co.idCategoriaOrigen
+    INNER JOIN CategoriaComida cc ON p.idCategoriaComida = cc.idCategoriaComida
+	where p.estado=1
+END
+GO
+
 
 create or alter proc usp_producto
 as
 select * from Producto
+where estado=1
 go
 
-/*create or alter proc usp_merge_producto
-@nom varchar(255),
-@prec decimal(10,2),
-@stock int,
-@id_cat_or int,
-@id_cat_com int
-as
-insert into Producto (nombreProducto,precioProd,stockProd,idCategoriaOrigen,idCategoriaComida)
-values (@nom,@prec, @stock, @id_cat_or, @id_cat_com)
-go*/
 
 CREATE OR ALTER PROCEDURE usp_merge_producto
     @nom VARCHAR(255),
@@ -111,7 +165,7 @@ CREATE OR ALTER PROCEDURE usp_merge_producto
     @id_cat_com INT
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT OFF;
     IF EXISTS (SELECT 1 FROM Producto WHERE nombreProducto = @nom)
     BEGIN
         UPDATE Producto
@@ -126,6 +180,27 @@ BEGIN
     BEGIN
         INSERT INTO Producto (nombreProducto, precioProd, stockProd, idCategoriaOrigen, idCategoriaComida)
         VALUES (@nom, @prec, @stock, @id_cat_or, @id_cat_com);
+    END
+END
+GO
+
+CREATE or alter PROCEDURE usp_desactivar_producto
+    @idProducto INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Verifica si el producto existe y está activo
+    IF EXISTS (
+        SELECT 1
+        FROM Producto
+        WHERE idProducto = @idProducto AND estado = 1
+    )
+    BEGIN
+        -- Desactiva el producto de forma lógica
+        UPDATE Producto
+        SET estado = 0
+        WHERE idProducto = @idProducto;
     END
 END
 GO
