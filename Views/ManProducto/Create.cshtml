@@ -34,14 +34,14 @@
                 </div>
 
                 <div class="mb-3">
-                    <label asp-for="id_cat_or" class="form-label"></label>
-                    <input asp-for="id_cat_or" class="form-control" type="number" min="1" />
+                    <label asp-for="id_cat_or" class="form-label">Selecciona la categoria origen</label>
+                    <select asp-for="id_cat_or" asp-items="ViewBag.catorigenes" asp-option-label="-- seleccionar --" class="form-control"></select>
                     <span asp-validation-for="id_cat_or" class="text-danger small"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label asp-for="id_cat_com" class="form-label"></label>
-                    <input asp-for="id_cat_com" class="form-control" type="number" min="1" />
+                    <label asp-for="id_cat_com" class="form-label">Selecciona la categoria comida</label>
+                    <select asp-for="id_cat_com" asp-items="ViewBag.catcomidas" asp-option-label="-- seleccionar --" class="form-control"></select>
                     <span asp-validation-for="id_cat_com" class="text-danger small"></span>
                 </div>
 
