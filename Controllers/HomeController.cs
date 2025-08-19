@@ -13,6 +13,11 @@ namespace yummyApp.Controllers
             return View();
         }
 
+        public IActionResult ManGeneralEstilado()
+        {
+            return View();
+        }
+
         public IActionResult ManGeneral()
         {
             return View();
