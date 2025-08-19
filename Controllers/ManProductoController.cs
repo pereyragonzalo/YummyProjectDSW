@@ -87,7 +87,7 @@ namespace yummyApp.Controllers
         IEnumerable<Producto> listProductos()
         {
             List<Producto> temporal = new List<Producto>();
-            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:sql"]))
+            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand("exec usp_producto", cn);
@@ -165,7 +165,7 @@ namespace yummyApp.Controllers
         {
             string mensaje = "";
 
-            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:sql"]))
+            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
             {
                 try
                 {
@@ -270,7 +270,7 @@ namespace yummyApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:sql"]))
+            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
             {
                 SqlCommand cmd = new SqlCommand("usp_desactivar_producto", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
