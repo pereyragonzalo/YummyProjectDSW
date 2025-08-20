@@ -38,11 +38,11 @@
 	body {
 		background-color: #000000;
 		color: white; /* Opcional: para que el texto se vea bien sobre fondo negro */
+		padding-top: 100px;
 	}
 </style>
 
 <body>
-	@*
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="@Url.Action("Index", "Home")">Yummy</span></a>
@@ -55,68 +55,38 @@
 					<li class="nav-item active"><a href="@Url.Action("Index", "Home")" class="nav-link">Inicio</a></li>
 					<li class="nav-item"><a href="@Url.Action("Menu", "Home")" class="nav-link">Menú</a></li>
 					<li class="nav-item"><a href="@Url.Action("Index", "Home")" class="nav-link">Carrito</a></li>
-					<li class="nav-item"><a href="@Url.Action("Index", "Home")" class="nav-link">Usuario</a></li>
+				</ul>
+
+				<ul class="navbar-nav">
+					@if (SignInManager.IsSignedIn(User))
+					{
+						<li class="nav-item">
+							<a id="manage" class="nav-link text-ligh" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><strong>Hola @UserManager.GetUserName(User)!</strong></a>
+						</li>
+
+						<li class="collapse navbar-collapse">
+							<form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/Identity/Account/Login">
+								<button id="logout" type="submit" class="nav-link btn btn-link text-white border-0"><strog>Cerrar Sesión</strog> </button>
+							</form>
+						</li>
+					}
+					else
+					{
+						@*<li class="nav-item">
+							<a class="nav-link text-ligh" id="register" asp-area="Identity" asp-page="/Account/Register">Registrarse</a>
+						</li>*@
+						<li class="nav-item">
+							<a class="nav-link text-ligh" id="login" asp-area="Identity" asp-page="/Account/Login">Iniciar Sesión</a>
+						</li>
+					}
+					<li class="nav-item">
+						<a class="nav-link text-ligh" asp-controller="Home" asp-action="ManGeneralEstilado">Empleados</a>
+					</li>
 				</ul>
 			</div>
 		</div>
-	</nav>*@
+	</nav>
 
-	<div class="wrap">
-		<div class="container">
-			<div class="row justify-content-between">
-				<div class="col-12 col-md d-flex align-items-center">
-					<p class="mb-0 phone"><span class="mailus">Acceso:</span> <a asp-controller="Home" asp-action="ManGeneralEstilado">Empleados</a> </p>
-				</div>
-				<div class="col-12 col-md d-flex justify-content-md-end">
-
-					<!--<div class="social-media">
-						<p class="mb-0 d-flex">
-							<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-							<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-							<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-							<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-						</p>
-					</div>-->
-					<div>
-
-						<ul class="navbar-nav">
-							@if (SignInManager.IsSignedIn(User))
-							{
-								<li class="nav-item">
-									<a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-								</li>
-								<li class="nav-item">
-									<form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/Identity/Account/Login">
-										<button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
-									</form>
-
-
-
-
-								</li>
-							}
-							else
-							{
-								<li class="nav-item">
-									<a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
-								</li>
-							}
-						</ul>
-
-					</div>
-
-
-				</div>
-			</div>
-		</div>
-		
-	</div>
-	
-	
-	
 	<!-- END nav -->
 
 	
