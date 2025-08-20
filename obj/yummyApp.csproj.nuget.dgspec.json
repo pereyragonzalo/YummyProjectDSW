@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ProyectoFinal\\YummyProjectDSW\\yummyApp.csproj": {}
+    "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\finalFinal\\YummyProjectDSW\\yummyApp.csproj": {}
   },
   "projects": {
-    "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ProyectoFinal\\YummyProjectDSW\\yummyApp.csproj": {
+    "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\finalFinal\\YummyProjectDSW\\yummyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ProyectoFinal\\YummyProjectDSW\\yummyApp.csproj",
+        "projectUniqueName": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\finalFinal\\YummyProjectDSW\\yummyApp.csproj",
         "projectName": "yummyApp",
-        "projectPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ProyectoFinal\\YummyProjectDSW\\yummyApp.csproj",
+        "projectPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\finalFinal\\YummyProjectDSW\\yummyApp.csproj",
         "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ProyectoFinal\\YummyProjectDSW\\obj\\",
+        "outputPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\finalFinal\\YummyProjectDSW\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
