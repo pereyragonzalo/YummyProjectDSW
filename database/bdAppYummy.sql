@@ -240,3 +240,16 @@ BEGIN
 END
 GO
 
+
+create or alter proc usp_catcomida
+as
+select * from CategoriaComida
+where estado = 1
+go
+
+create or alter proc usp_catorigen
+as
+select * from CategoriaOrigen
+where estado = 1
+go
+

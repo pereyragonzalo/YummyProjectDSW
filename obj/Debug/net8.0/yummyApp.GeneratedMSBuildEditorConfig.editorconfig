@@ -17,107 +17,109 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = yummyApp
 build_property.RootNamespace = yummyApp
-build_property.ProjectDir = C:\workspaceNetCore\YummyProjectDSW\
+build_property.ProjectDir = F:\Cibertec\5 Ciclo\Modulo2\DesarrolloServiciosWebI\ProyectoFinal\YummyProjectDSW\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\workspaceNetCore\YummyProjectDSW
+build_property.MSBuildProjectDirectory = F:\Cibertec\5 Ciclo\Modulo2\DesarrolloServiciosWebI\ProyectoFinal\YummyProjectDSW
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Areas/Identity/Pages/Account/Login.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Areas/Identity/Pages/Account/Register.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Areas/Identity/Pages/_ViewImports.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Areas/Identity/Pages/_ViewStart.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Home/Index.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Home/ManGeneral.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Home/ManGeneral.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYW5HZW5lcmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Home/ManGeneralEstilado.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Home/ManGeneralEstilado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYW5HZW5lcmFsRXN0aWxhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Home/Menu.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Home/Menu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Home/Privacy.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Home/TiendaGeneral.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Home/TiendaGeneral.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaWVuZGFHZW5lcmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/Create.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/ManProducto/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/Details.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/ManProducto/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/Edit.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/ManProducto/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/ManProducto/ListadoGeneralProductos.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/ManProducto/ListadoGeneralProductos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuUHJvZHVjdG9cTGlzdGFkb0dlbmVyYWxQcm9kdWN0b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Reportes/Resumen.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Reportes/Resumen.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcUmVzdW1lbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Shared/Error.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Shared/_LoginPartial.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/_ViewImports.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/_ViewStart.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Shared/_Layout.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-73bc1snhm4
 
-[C:/workspaceNetCore/YummyProjectDSW/Views/Shared/_TemplateLayout.cshtml]
+[F:/Cibertec/5 Ciclo/Modulo2/DesarrolloServiciosWebI/ProyectoFinal/YummyProjectDSW/Views/Shared/_TemplateLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9UZW1wbGF0ZUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-oknralwhsj
